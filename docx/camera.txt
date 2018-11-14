@@ -1,0 +1,29 @@
+# hardware setup
+
+quiz: how to activate camera on raspbian?
+ans-: 
+  steps:
+    step 1: goto pi's terminal
+    step 2: sudo raspi-config
+    step 3: goto "Interfacing Options" marked as 5
+    step 4: goto "Camera" marked as P1
+    step 5: hit tab and select <select> and hit enter
+    step 6: hit tab and select <Yes> to enable camera module
+    step 7: hit <Ok> to finish config
+    step 8: [it may require to reboot the raspberry pi to take the change effect on pi]
+ref-: https://www.youtube.com/watch?v=qk1IVs5B1GI
+
+
+# python's picamera module
+quiz: how to activate picamera module on python?
+ans-: 
+  # update apt package manager
+  sudo apt-get update
+  # upgrade apt package manager -- not necessary 
+  sudo apt-get upgrade
+  # install picamera for python 2x
+  sudo apt-get install python-picamera
+  # install picamera for python 3x 
+  sudo apt-get install python3-picamera
+ref-: https://www.raspberrypi.org/documentation/linux/software/python.md
+
