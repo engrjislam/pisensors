@@ -11,3 +11,19 @@ ans-:
   sudo apt-get install python3-rpi.gpio
 ref-: https://learn.adafruit.com/playing-sounds-and-using-buttons-with-raspberry-pi/install-python-module-rpi-dot-gpio
 
+
+# motion detection by gpio (general purpose input output) config
+pir sensor essentially required 3 cables [to connect raspberry pi]
+  - GND
+  - VCC
+  - OUT
+connection to Pi:
+  - pir's pin GND is connected to pi's pin 9 which is Ground
+  - pir's pin VCC is connected to pi's pin 1 which is 3.3V
+  - pir's pin OUT is connected to pi's pin 7 which is gpio used as input coming from pir
+reading sensor data:
+first of all we need to set the mode of the gpio
+  - board
+  - bcm
+let's have a study on pin config from https://pinout.xyz/
+since pir's pin GND and VCC is connected to pi's pin with appropriate meaning ... 
