@@ -1,0 +1,13 @@
+# python's config for pir motion sensor
+quiz: how to install the dependencies for pir motion sensor on python?
+ans-: 
+  # update apt package manager
+  sudo apt-get update
+  # upgrade apt package manager -- not necessary 
+  sudo apt-get upgrade
+  # install picamera for python 2x
+  sudo apt-get install python-rpi.gpio
+  # install picamera for python 3x 
+  sudo apt-get install python3-rpi.gpio
+ref-: https://learn.adafruit.com/playing-sounds-and-using-buttons-with-raspberry-pi/install-python-module-rpi-dot-gpio
+
