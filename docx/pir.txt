@@ -1,5 +1,5 @@
 # python's config for pir motion sensor like rpi.gpio installation
-quiz: how to install the dependencies for pir motion sensor on python?
+quiz: how to install python's gpio on rpi?
 ans-: 
   # update apt package manager
   sudo apt-get update
@@ -11,6 +11,34 @@ ans-:
   sudo apt-get install python3-rpi.gpio
 ref-: https://learn.adafruit.com/playing-sounds-and-using-buttons-with-raspberry-pi/install-python-module-rpi-dot-gpio
 
+# install wiringPi to read gpio
+quiz: how to install wiringPi to use gpio on rpi?
+ans-: 
+  # remove previous wiringPi
+  sudo apt-get purge wiringpi
+  hash -r
+  # optional commands -- update & upgrade
+  sudo apt-get update
+  sudo apt-get upgrade
+  # install new wiringPi
+  cd
+  git clone git://git.drogon.net/wiringPi
+  cd ~/wiringPi
+  ./build
+
+ref-: http://wiringpi.com/download-and-install/
+
+# install wiringPi to read gpio with python
+quiz: how to install wiringPi to use gpio on rpi with python?
+ans-: 
+  # python 2x
+  # wiringpi & wiringpi2 can be isntalled 
+  sudo pip install wiringpi 
+  # python 3x
+  # wiringpi & wiringpi2 can be isntalled 
+  sudo pip3 install wiringpi
+
+ref-: https://github.com/WiringPi/WiringPi-Python
 
 # motion detection by gpio (general purpose input output) config
 pir sensor essentially required 3 cables [to connect raspberry pi]
@@ -25,5 +53,14 @@ reading sensor data:
 first of all we need to set the mode of the gpio
   - board
   - bcm
+  - wiringpi
 let's have a study on pin config from https://pinout.xyz/
-since pir's pin GND and VCC is connected to pi's pin with appropriate meaning ... 
+since pir's pin GND and VCC is connected to pi's Ground (pin 1) and VCC (pin 1). So, we 
+do not need to worry about those but we should care about the input coming into pi. pi has two 
+different ways to grab the input depending on the mode. pi uses gpio (general purpose 
+input output) to get the input from any device to connected to it. https://pinout.xyz/ 
+shows detail pin configuration of pi's pin and their uses.  
+raspberry pi 3 having 40 pins has been used for this experiment. for all mode (board, bcm & wiringpi)
+we have use physical pin 7. this pin has diferrent numbering system on for all mode to get the input.
+  - pi's physical pin 7 used board's and wiringpi's pin 7
+  - pi's physical pin 7 used bcm's pin 4
