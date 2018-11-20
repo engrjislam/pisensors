@@ -8,6 +8,6 @@ url = "https://projects.raspberrypi.org/en/projects/getting-started-with-picamer
 
 # start and stop previewing
 camera = picamera.PiCamera()
-camera.start_preview()
+camera.start_preview(fullscreen=False, window = (100, 20, 640, 480))
 time.sleep(10)
 camera.stop_preview()
