@@ -64,3 +64,11 @@ raspberry pi 3 having 40 pins has been used for this experiment. for all mode (b
 we have use physical pin 7. this pin has diferrent numbering system on for all mode to get the input.
   - pi's physical pin 7 used board's and wiringpi's pin 7
   - pi's physical pin 7 used bcm's pin 4
+
+
+# running the application
+quiz: how to run the application?
+ans-:
+    # python3
+    python3 pir_board.py
+ref-:

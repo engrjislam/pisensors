@@ -36,3 +36,10 @@ ans-:
   sudo apt-get install python3-picamera
 ref-: https://www.raspberrypi.org/documentation/linux/software/python.md
 
+
+# running the application
+quiz: how to run the application?
+ans-:
+    # python3
+    python3 previw.py
+ref-:
